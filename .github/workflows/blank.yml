@@ -23,7 +23,7 @@ jobs:
           npm run build
 
       - name: Install Qt Android
-        uses: jurplel/install-qt-action@v4
+        uses: ./
         with:
           version: 6.11.1
           target: android
