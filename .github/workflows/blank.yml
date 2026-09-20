@@ -18,9 +18,10 @@ jobs:
           cache-dependency-path: action/
 
       - run: |
-          cd action
+          pushd action
           npm ci || npm install
           npm run build
+          popd
           sed -i.bak 's|uses: $/action|uses: ./action|' action.yml
           diff -u action.yml.bak action.yml || true
           git status --porcelain
