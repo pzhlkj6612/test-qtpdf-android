@@ -21,6 +21,9 @@ jobs:
           cd action
           npm ci || npm install
           npm run build
+          sed -i.bak 's|uses: $/action|uses: ./action|' action.yml
+          diff -u action.yml.bak action.yml || true
+          git status --porcelain
 
       - name: Install Qt Android
         uses: ./
