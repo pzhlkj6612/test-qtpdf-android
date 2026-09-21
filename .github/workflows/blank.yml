@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           repository: jurplel/install-qt-action
-          ref: 3559e11f753602a6272f682cc74dc95100dbcd81
+          ref: ${{ matrix.repo }}
 
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
