@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           repository: pzhlkj6612/forked-install-qt-action
-          ref: cac6ac70422104e1094ff308ed01f233bc8f0199
+          ref: 8476f1d99ad58d6a24e5c6f073a22e8fb6bd6a6c
 
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
@@ -29,15 +29,14 @@ jobs:
       - name: Install Qt Android
         uses: ./
         with:
-          version: '6.8.3'
-          host: 'windows'
-          target: 'desktop'
+          version: '<6.8'
+          target: 'android'
           arch: 'win64_msvc2022_64'
           dir: '${{ github.workspace }}/example/'
           install-deps: 'true'
           modules: 'qtcharts qtwebengine'
           archives: 'qtbase qtsvg'
-          cache: 'false'
+          cache: 'true'
           cache-key-prefix: 'install-qt-action'
           setup-python: 'true'
           tools: 'tools_ifw tools_qtcreator,qt.tools.qtcreator'
