@@ -35,24 +35,11 @@ jobs:
       - name: Install Qt Android
         uses: ./
         with:
-          version: '<6.7'
-          target: 'android'
-          arch: 'android_arm64_v8a'
-          dir: '${{ github.workspace }}/example/'
-          install-deps: 'true'
-          modules: 'qtcharts qtwebengine'
-          archives: 'qtbase qtsvg'
-          cache: 'true'
-          cache-key-prefix: 'install-qt-action'
-          setup-python: 'true'
-          tools: 'tools_ifw tools_qtcreator,qt.tools.qtcreator'
-          set-env: 'true'
-          tools-only: 'false'
-          aqtversion: '==3.3.*'
-          py7zrversion: '==1.1.0'
-          extra: '--external 7z'
-          use-official: false
-          email: ${{ secrets.QT_EMAIL }}
-          pw: ${{ secrets.QT_PW }}
+          version: 6.11.1
+          target: 'desktop'
+          arch: 'linux_gcc_64'
+          modules: qtwebview qtpositioning qtlocation qtpdf
+          tools: 'tools_ifw'
+          cache: true
 
           aqtsource: git+https://github.com/miurahr/aqtinstall.git@076e1659807d0b362a3ed684d54c2e9c775eb9c7
