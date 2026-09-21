@@ -5,11 +5,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - 4b1de714df305cbacbcf82bce58e963871c21f80 # master
+          - 3559e11f753602a6272f682cc74dc95100dbcd81 # mine
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
-          repository: pzhlkj6612/forked-install-qt-action
-          ref: 9c4b6bf512cf37233da21e6adbe2f1c07d2d7973
+          repository: jurplel/install-qt-action
+          ref: 3559e11f753602a6272f682cc74dc95100dbcd81
 
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
