@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           repository: pzhlkj6612/forked-install-qt-action
-          ref: 76ce10ffad2cd5138b91d705681724bc6127527b
+          ref: cac6ac70422104e1094ff308ed01f233bc8f0199
 
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
@@ -30,8 +30,9 @@ jobs:
         uses: ./
         with:
           version: 6.11.1
-          target: android
-          arch: android_arm64_v8a
+          target: 'desktop'
+          arch: 'linux_gcc_64'
           modules: qtwebview qtpositioning qtlocation qtpdf
+          tools: 'tools_ifw'
           cache: true
           aqtsource: git+https://github.com/miurahr/aqtinstall.git@076e1659807d0b362a3ed684d54c2e9c775eb9c7
