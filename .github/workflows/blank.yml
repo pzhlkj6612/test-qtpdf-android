@@ -31,7 +31,7 @@ jobs:
         with:
           version: '<6.8'
           target: 'android'
-          arch: 'win64_msvc2022_64'
+          arch: 'android_arm64_v8a'
           dir: '${{ github.workspace }}/example/'
           install-deps: 'true'
           modules: 'qtcharts qtwebengine'
